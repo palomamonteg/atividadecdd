@@ -21,10 +21,12 @@ while True:
         for usu in usuario:
             print (f"Usuário: {usu}")
     elif op == 2:
-        nome = input ("Digite o seu nome: ")
-        senhas = int (input("Digite a sua senha: "))
+        nome = input("Digite o seu nome: ")
+        senhas = input("Digite a sua senha: ")
         for x in range(len(usuario)):
-            if usuario[x]== nome and senha[x] == senhas:
+            if usuario[x] != nome and senha[x] != senhas:
+                print ("Ops! Senha incorreta. Tente novamente!")
+            else:
                 print (f"Login efetuado com sucesso. \nSeja bem vindo, {nome}!")
     elif op == 1:
         nome = input("Digite o seu nome: ")
