@@ -1,7 +1,6 @@
 #Altere o sistema anterior (atividade 8) e faça um sistema de login, pedindo a senha do usuário e cadastro. 
 #Exercício 9
 
-
 usuario = []
 senha = []
 
@@ -23,11 +22,14 @@ while True:
     elif op == 2:
         nome = input("Digite o seu nome: ")
         senhas = input("Digite a sua senha: ")
+        logins = False 
         for x in range(len(usuario)):
-            if usuario[x] != nome and senha[x] != senhas:
-                print ("Ops! Senha incorreta. Tente novamente!")
-            else:
-                print (f"Login efetuado com sucesso. \nSeja bem vindo, {nome}!")
+            if usuario[x] == nome and senha[x] == senhas:
+                print(f"Login efetuado com sucesso. \nSeja bem vindo, {nome}!")
+                logins = True  
+                break
+            if not logins:
+                print("Ops! Senha incorreta. Tente novamente!")
     elif op == 1:
         nome = input("Digite o seu nome: ")
         senhas = input ("Digite a senha: ")
